@@ -19,5 +19,9 @@ public class SceneMgmt : MonoBehaviour
     }
     public void QuitGame() {
         Application.Quit();
+
+        #if UNITY_EDITOR
+            
+        #endif
     }
 }
