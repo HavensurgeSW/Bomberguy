@@ -23,6 +23,10 @@ public class EnemyMovement : MonoBehaviour
         moveDirec = 1;
     }
 
+    void Start(){
+        InvokeRepeating(nameof(ChangeMoveDirection), 3, 1);
+    }
+
     private void Update()
     {
         switch (moveDirec)
@@ -44,7 +48,7 @@ public class EnemyMovement : MonoBehaviour
                 break;
         }
 
-        InvokeRepeating(nameof(ChangeMoveDirection), 3, 3);
+        
     }
 
     private void FixedUpdate()
@@ -84,7 +88,6 @@ public class EnemyMovement : MonoBehaviour
     private void DeathSequence()
     {
         enabled = false;
-        GetComponent<BombController>().enabled = false;
 
         spriteRendererUp.enabled = false;
         spriteRendererDown.enabled = false;
@@ -101,8 +104,13 @@ public class EnemyMovement : MonoBehaviour
     }
 
     private void ChangeMoveDirection() {
-        moveDirec = Random.Range(1, 4);
-        Debug.Log(moveDirec);
+        int temp = moveDirec;
+        do{
+             moveDirec = Random.Range(1, 4);
+             Debug.Log(moveDirec);
+        }while(moveDirec!=temp);
+
+        
     }
 
 }
