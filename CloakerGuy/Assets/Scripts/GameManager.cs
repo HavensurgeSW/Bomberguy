@@ -12,7 +12,13 @@ public class GameManager : MonoBehaviour
     private bool winCon = false;
 
     private void Awake(){
-        current = this;
+            if (current != null && current != this)
+                Destroy(current.gameObject);
+            else
+            {
+                current = this;
+                DontDestroyOnLoad(current);
+            }
     }
 
     private void NewRound()
@@ -35,6 +41,8 @@ public class GameManager : MonoBehaviour
         EnemyBehaviour.OnEnemyKilled -= CheckWinCondition;
         EnemyBehaviour.OnEnemyKilled -= WinGame;
         EnemyBehaviour.OnEnemySpawned -= AddEnemyCount;
+
+            MovementController.OnPlayerDeath -= LoseGame;
     }
 
     private void AddEnemyCount(){

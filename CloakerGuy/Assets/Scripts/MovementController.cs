@@ -90,8 +90,8 @@ public class MovementController : MonoBehaviour
 
     private void OnDeathSequenceEnded()
     {
-        gameObject.SetActive(false);
         OnPlayerDeath?.Invoke();
+        gameObject.SetActive(false);
         
     }
 
