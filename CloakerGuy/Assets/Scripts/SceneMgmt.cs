@@ -8,10 +8,11 @@ public class SceneMgmt : MonoBehaviour
     public void ChangeToGame() {
         SceneManager.LoadScene(1);
     }
-    public void ChangeToSettings() {
+    public void ChangeToTutorial() {
+        SceneManager.LoadScene(3);
     }
     public void ChangeToCredits() {
-
+        SceneManager.LoadScene(2);
     }
 
     public void ChangeToMenu() {
