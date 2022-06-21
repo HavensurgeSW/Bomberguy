@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 namespace HSS{
 [RequireComponent(typeof(Rigidbody2D))]
@@ -7,6 +8,8 @@ public class MovementController : MonoBehaviour
     private new Rigidbody2D rigidbody;
     private Vector2 direction = Vector2.down;
     public float speed = 5f;
+
+    public static Action OnPlayerDeath;
 
     [Header("Input")]
     public KeyCode inputUp = KeyCode.W;
@@ -88,7 +91,7 @@ public class MovementController : MonoBehaviour
     private void OnDeathSequenceEnded()
     {
         gameObject.SetActive(false);
-        //FindObjectOfType<GameManager>().CheckWinState();
+        OnPlayerDeath?.Invoke();
         
     }
 

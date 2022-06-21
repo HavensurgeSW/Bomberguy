@@ -7,6 +7,12 @@ namespace HSS
 {
     public class SceneMgmt : MonoBehaviour
     {
+        public static void ChangeToWinScreen() {
+            SceneManager.LoadScene(5);
+        }
+        public static void ChangeToLoseScreen() {
+            SceneManager.LoadScene(4);
+        }
         public void ChangeToGame()
         {
             SceneManager.LoadScene(1);
@@ -27,10 +33,6 @@ namespace HSS
         public void QuitGame()
         {
             Application.Quit();
-
-#if UNITY_EDITOR
-
-#endif
         }
     }
 }
