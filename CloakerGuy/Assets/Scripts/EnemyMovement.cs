@@ -1,5 +1,7 @@
 using UnityEngine;
 
+namespace HSS{
+
 [RequireComponent(typeof(Rigidbody2D))]
 public class EnemyMovement : MonoBehaviour
 {
@@ -24,10 +26,10 @@ public class EnemyMovement : MonoBehaviour
     }
 
     void Start(){
-        InvokeRepeating(nameof(ChangeMoveDirection), 3, 1);
+        InvokeRepeating(nameof(ChangeMoveDirection), 3, 2);
     }
 
-    private void Update()
+    void Update()
     {
         switch (moveDirec)
         {
@@ -104,13 +106,15 @@ public class EnemyMovement : MonoBehaviour
     }
 
     private void ChangeMoveDirection() {
-        int temp = moveDirec;
-        do{
-             moveDirec = Random.Range(1, 5);
-             Debug.Log(moveDirec);
-        }while(moveDirec!=temp);
+            int temp = moveDirec;
+            moveDirec = Random.Range(1, 5);
 
-        
+            if(moveDirec == temp)
+                moveDirec++;
+
+            if(moveDirec>4)
+                moveDirec = 1;
     }
 
+    }
 }

@@ -1,5 +1,6 @@
 using UnityEngine;
 
+namespace HSS{
 public class Destructible : MonoBehaviour
 {
     public float destructionTime = 1f;
@@ -22,4 +23,5 @@ public class Destructible : MonoBehaviour
         }
     }
 
+}
 }

@@ -1,5 +1,7 @@
 using UnityEngine;
 
+namespace HSS{
+
 [RequireComponent(typeof(SpriteRenderer))]
 public class AnimatedSpriteRenderer : MonoBehaviour
 {
@@ -49,4 +51,5 @@ public class AnimatedSpriteRenderer : MonoBehaviour
         }
     }
 
+}
 }

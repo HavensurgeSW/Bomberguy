@@ -1,5 +1,6 @@
 using UnityEngine;
 
+namespace HSS{
 [RequireComponent(typeof(Rigidbody2D))]
 public class MovementController : MonoBehaviour
 {
@@ -81,13 +82,15 @@ public class MovementController : MonoBehaviour
         spriteRendererRight.enabled = false;
         spriteRendererDeath.enabled = true;
 
-        Invoke(nameof(OnDeathSequenceEnded), 1.25f);
+        Invoke(nameof(OnDeathSequenceEnded), 3.25f);
     }
 
     private void OnDeathSequenceEnded()
     {
         gameObject.SetActive(false);
         //FindObjectOfType<GameManager>().CheckWinState();
+        
     }
 
+}
 }

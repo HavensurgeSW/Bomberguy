@@ -99,8 +99,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   idleSprite: {fileID: 1332689913, guid: 40aadec9a1cb6fc4e9a328520c2e031e, type: 3}
   animationSprites:
-  - {fileID: 1332689913, guid: 40aadec9a1cb6fc4e9a328520c2e031e, type: 3}
-  - {fileID: 1055262503, guid: 40aadec9a1cb6fc4e9a328520c2e031e, type: 3}
+  - {fileID: -1846205563, guid: 40aadec9a1cb6fc4e9a328520c2e031e, type: 3}
+  - {fileID: -853547880, guid: 40aadec9a1cb6fc4e9a328520c2e031e, type: 3}
   animationTime: 0.5
   loop: 1
   idle: 1
@@ -203,8 +203,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   idleSprite: {fileID: -1846205563, guid: 40aadec9a1cb6fc4e9a328520c2e031e, type: 3}
   animationSprites:
-  - {fileID: -1846205563, guid: 40aadec9a1cb6fc4e9a328520c2e031e, type: 3}
-  - {fileID: -853547880, guid: 40aadec9a1cb6fc4e9a328520c2e031e, type: 3}
+  - {fileID: 1332689913, guid: 40aadec9a1cb6fc4e9a328520c2e031e, type: 3}
+  - {fileID: 1055262503, guid: 40aadec9a1cb6fc4e9a328520c2e031e, type: 3}
   animationTime: 0.5
   loop: 1
   idle: 1
@@ -349,7 +349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8246a3fec8c3cb340a239ccd9a984cc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 2
   spriteRendererUp: {fileID: 522246263114027053}
   spriteRendererDown: {fileID: 522246263571194794}
   spriteRendererLeft: {fileID: 522246264047965595}
@@ -454,8 +454,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   idleSprite: {fileID: -1120205772, guid: 40aadec9a1cb6fc4e9a328520c2e031e, type: 3}
   animationSprites:
-  - {fileID: -1120205772, guid: 40aadec9a1cb6fc4e9a328520c2e031e, type: 3}
-  - {fileID: -2042090882, guid: 40aadec9a1cb6fc4e9a328520c2e031e, type: 3}
+  - {fileID: -562194047, guid: 40aadec9a1cb6fc4e9a328520c2e031e, type: 3}
+  - {fileID: -1115443840, guid: 40aadec9a1cb6fc4e9a328520c2e031e, type: 3}
   animationTime: 0.5
   loop: 1
   idle: 1
@@ -499,7 +499,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 522246264106048862}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -568,8 +568,8 @@ MonoBehaviour:
   - {fileID: -596043858, guid: 50e98e8b89e97eb4780f64f75de1e443, type: 3}
   - {fileID: -659270095, guid: 50e98e8b89e97eb4780f64f75de1e443, type: 3}
   animationTime: 0.16666667
-  loop: 0
-  idle: 0
+  loop: 1
+  idle: 1
 --- !u!1 &522246264202121028
 GameObject:
   m_ObjectHideFlags: 0
@@ -669,8 +669,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   idleSprite: {fileID: -1846205563, guid: 40aadec9a1cb6fc4e9a328520c2e031e, type: 3}
   animationSprites:
-  - {fileID: -1846205563, guid: 40aadec9a1cb6fc4e9a328520c2e031e, type: 3}
-  - {fileID: -853547880, guid: 40aadec9a1cb6fc4e9a328520c2e031e, type: 3}
+  - {fileID: 1332689913, guid: 40aadec9a1cb6fc4e9a328520c2e031e, type: 3}
+  - {fileID: 1055262503, guid: 40aadec9a1cb6fc4e9a328520c2e031e, type: 3}
   animationTime: 0.5
   loop: 1
   idle: 1

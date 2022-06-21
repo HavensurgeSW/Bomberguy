@@ -1,5 +1,6 @@
 using UnityEngine;
 
+namespace HSS{
 public class Explosion : MonoBehaviour
 {
     public AnimatedSpriteRenderer start;
@@ -24,4 +25,5 @@ public class Explosion : MonoBehaviour
         Destroy(gameObject, seconds);
     }
 
+}
 }

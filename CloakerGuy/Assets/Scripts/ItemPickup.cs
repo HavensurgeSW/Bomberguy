@@ -1,5 +1,7 @@
 using UnityEngine;
 
+namespace HSS{
+
 public class ItemPickup : MonoBehaviour
 {
     public enum ItemType
@@ -38,4 +40,5 @@ public class ItemPickup : MonoBehaviour
         }
     }
 
+}
 }

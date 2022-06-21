@@ -2,6 +2,8 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
+
+namespace HSS{
 public class BombController : MonoBehaviour
 {
     [Header("Bomb")]
@@ -108,4 +110,5 @@ public class BombController : MonoBehaviour
         }
     }
 
+}
 }

@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+namespace HSS{
+
 public class GameManager : MonoBehaviour
 {
     public GameObject[] players;
@@ -26,4 +28,5 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+}
 }
