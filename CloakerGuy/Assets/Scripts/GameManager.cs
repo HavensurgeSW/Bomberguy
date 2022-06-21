@@ -7,29 +7,11 @@ namespace HSS{
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject[] players;
-
     public static GameManager current;
-    public static Action<EnemyBehaviour> OnEnemyKilled;
+    [SerializeField]private int totalEnemies = 0;
 
     private void Awake(){
         current = this;
-    }
-
-    public void CheckWinState()
-    {
-        int aliveCount = 0;
-
-        foreach (GameObject player in players)
-        {
-            if (player.activeSelf) {
-                aliveCount++;
-            }
-        }
- 
-        if (aliveCount <= 1) {
-            Invoke(nameof(NewRound), 3f);
-        }
     }
 
     private void NewRound()
@@ -38,25 +20,20 @@ public class GameManager : MonoBehaviour
     }
 
     void OnEnable(){
-        OnEnemyKilled+=DiminishEnemyCount;
-
+        EnemyBehaviour.OnEnemyKilled+=AddEnemyCount;
     }
 
     void OnDisable()
     {
-        OnEnemyKilled-=DiminishEnemyCount;
+        EnemyBehaviour.OnEnemyKilled-=DiminishEnemyCount;
     }
 
     private void AddEnemyCount(){
-
-
+        totalEnemies++;
     }
 
     private void DiminishEnemyCount(){
-
-
+        totalEnemies--;
     }
-
-
 }
 }

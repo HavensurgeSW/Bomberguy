@@ -1,16 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 namespace HSS{
 
 public class EnemyBehaviour : MonoBehaviour
 {
-    void OnCollisionEnter(Collision other)
+
+    public static Action OnEnemyKilled;
+    public static Action OnEnemySpawned;
+
+    private void Start()
     {
-        if (other.gameObject.CompareTag("Explosion"))
+        OnEnemySpawned?.Invoke();
+    }
+
+    void OnCollisionEnter(Collision other){
+        if (other.gameObject.layer == LayerMask.NameToLayer("Explosion"))
         {
-            GameManager.OnEnemyKilled?.Invoke(this);      
+           OnEnemyKilled?.Invoke();      
         }
     }
 }
