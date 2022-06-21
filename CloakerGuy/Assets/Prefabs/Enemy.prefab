@@ -101,7 +101,7 @@ MonoBehaviour:
   animationSprites:
   - {fileID: 1332689913, guid: 40aadec9a1cb6fc4e9a328520c2e031e, type: 3}
   - {fileID: 1055262503, guid: 40aadec9a1cb6fc4e9a328520c2e031e, type: 3}
-  animationTime: 0.1
+  animationTime: 0.5
   loop: 1
   idle: 1
 --- !u!1 &522246263571194793
@@ -205,7 +205,7 @@ MonoBehaviour:
   animationSprites:
   - {fileID: -1846205563, guid: 40aadec9a1cb6fc4e9a328520c2e031e, type: 3}
   - {fileID: -853547880, guid: 40aadec9a1cb6fc4e9a328520c2e031e, type: 3}
-  animationTime: 0.1
+  animationTime: 0.5
   loop: 1
   idle: 1
 --- !u!1 &522246264031025562
@@ -456,7 +456,7 @@ MonoBehaviour:
   animationSprites:
   - {fileID: -1120205772, guid: 40aadec9a1cb6fc4e9a328520c2e031e, type: 3}
   - {fileID: -2042090882, guid: 40aadec9a1cb6fc4e9a328520c2e031e, type: 3}
-  animationTime: 0.1
+  animationTime: 0.5
   loop: 1
   idle: 1
 --- !u!1 &522246264106048862
@@ -671,6 +671,6 @@ MonoBehaviour:
   animationSprites:
   - {fileID: -1846205563, guid: 40aadec9a1cb6fc4e9a328520c2e031e, type: 3}
   - {fileID: -853547880, guid: 40aadec9a1cb6fc4e9a328520c2e031e, type: 3}
-  animationTime: 0.1
+  animationTime: 0.5
   loop: 1
   idle: 1

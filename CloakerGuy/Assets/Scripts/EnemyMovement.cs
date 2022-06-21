@@ -20,7 +20,7 @@ public class EnemyMovement : MonoBehaviour
     {
         rigidbody = GetComponent<Rigidbody2D>();
         activeSpriteRenderer = spriteRendererDown;
-        moveDirec = 1;
+        moveDirec = Random.Range(1,4);
     }
 
     void Start(){
@@ -106,7 +106,7 @@ public class EnemyMovement : MonoBehaviour
     private void ChangeMoveDirection() {
         int temp = moveDirec;
         do{
-             moveDirec = Random.Range(1, 4);
+             moveDirec = Random.Range(1, 5);
              Debug.Log(moveDirec);
         }while(moveDirec!=temp);
 
