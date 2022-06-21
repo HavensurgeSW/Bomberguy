@@ -20,16 +20,19 @@ public class GameManager : MonoBehaviour
     }
 
     void OnEnable(){
-        EnemyBehaviour.OnEnemyKilled+=AddEnemyCount;
+        EnemyBehaviour.OnEnemyKilled += DiminishEnemyCount;
+        EnemyBehaviour.OnEnemySpawned += AddEnemyCount;
     }
 
     void OnDisable()
     {
-        EnemyBehaviour.OnEnemyKilled-=DiminishEnemyCount;
+        EnemyBehaviour.OnEnemyKilled -= DiminishEnemyCount;
+        EnemyBehaviour.OnEnemySpawned -= AddEnemyCount;
     }
 
     private void AddEnemyCount(){
         totalEnemies++;
+            Debug.Log("Total Enemies: " + totalEnemies);
     }
 
     private void DiminishEnemyCount(){

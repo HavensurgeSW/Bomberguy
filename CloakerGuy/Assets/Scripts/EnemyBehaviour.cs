@@ -16,11 +16,16 @@ public class EnemyBehaviour : MonoBehaviour
         OnEnemySpawned?.Invoke();
     }
 
-    void OnCollisionEnter(Collision other){
-        if (other.gameObject.layer == LayerMask.NameToLayer("Explosion"))
-        {
-           OnEnemyKilled?.Invoke();      
-        }
+    //void OnCollisionEnter(Collision other){
+    //    if (other.gameObject.CompareTag("Explosion"))
+    //    {
+    //       OnEnemyKilled?.Invoke();      
+    //    }
+    //}
+
+    private void OnDisable()
+    {
+        OnEnemyKilled?.Invoke();
     }
 }
 }
