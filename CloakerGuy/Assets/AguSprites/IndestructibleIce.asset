@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: IndestructibleIce
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 21300000, guid: 0ba08cdc3563c1a4099482217a710520, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.8627451}
   m_Transform:
     e00: 1
     e01: 0
