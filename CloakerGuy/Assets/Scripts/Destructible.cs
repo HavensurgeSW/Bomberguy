@@ -3,8 +3,7 @@ using UnityEngine;
 namespace HSS{
 public class Destructible : MonoBehaviour
 {
-    public float destructionTime = 1f;
-    public GameObject[] spawnableItems;
+        public float destructionTime = 1f;
     private AudioSource sfxOutput;
 
         private void Awake()

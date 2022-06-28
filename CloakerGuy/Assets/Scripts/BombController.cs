@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using System;
 
 
 namespace HSS{
@@ -23,6 +24,8 @@ public class BombController : MonoBehaviour
     [Header("Destructible")]
     public Tilemap destructibleTiles;
     public Destructible destructiblePrefab;
+
+    public static Action BombExploded;
 
     private void OnEnable()
     {
@@ -62,6 +65,7 @@ public class BombController : MonoBehaviour
         Explode(position, Vector2.right, explosionRadius);
 
         sfxOutput.Play();
+        BombExploded?.Invoke();
 
         Destroy(bomb.gameObject);
         bombsRemaining++;
