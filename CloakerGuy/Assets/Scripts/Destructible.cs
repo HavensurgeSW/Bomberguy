@@ -4,24 +4,17 @@ namespace HSS{
 public class Destructible : MonoBehaviour
 {
     public float destructionTime = 1f;
-
-    [Range(0f, 1f)]
-    public float itemSpawnChance = 0.2f;
     public GameObject[] spawnableItems;
+    private AudioSource sfxOutput;
 
-    private void Start()
-    {
-        Destroy(gameObject, destructionTime);
-    }
-
-    private void OnDestroy()
-    {
-        if (spawnableItems.Length > 0 && Random.value < itemSpawnChance)
+        private void Awake()
         {
-            int randomIndex = Random.Range(0, spawnableItems.Length);
-            Instantiate(spawnableItems[randomIndex], transform.position, Quaternion.identity);
+            sfxOutput = GetComponent<AudioSource>();
         }
-    }
+        private void Start(){
+            sfxOutput.Play();
+            Destroy(gameObject, destructionTime);
+        }
 
 }
 }

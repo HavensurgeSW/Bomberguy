@@ -17,7 +17,8 @@ public class BombController : MonoBehaviour
     public Explosion explosionPrefab;
     public LayerMask explosionLayerMask;
     public float explosionDuration = 1f;
-    public int explosionRadius = 1;
+    public int explosionRadius = 2;
+    public AudioSource sfxOutput;
 
     [Header("Destructible")]
     public Tilemap destructibleTiles;
@@ -27,6 +28,7 @@ public class BombController : MonoBehaviour
     {
         bombsRemaining = bombAmount;
     }
+  
 
     private void Update()
     {
@@ -58,6 +60,8 @@ public class BombController : MonoBehaviour
         Explode(position, Vector2.down, explosionRadius);
         Explode(position, Vector2.left, explosionRadius);
         Explode(position, Vector2.right, explosionRadius);
+
+        sfxOutput.Play();
 
         Destroy(bomb.gameObject);
         bombsRemaining++;
