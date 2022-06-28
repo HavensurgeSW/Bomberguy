@@ -82,10 +82,6 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision other)
-    {
-       
-    }
 
     private void DeathSequence()
     {

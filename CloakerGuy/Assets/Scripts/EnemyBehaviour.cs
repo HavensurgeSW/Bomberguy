@@ -17,16 +17,14 @@ public class EnemyBehaviour : MonoBehaviour
         
     }
 
-    //void OnCollisionEnter(Collision other){
-    //    if (other.gameObject.CompareTag("Explosion"))
-    //    {
-    //       OnEnemyKilled?.Invoke();      
-    //    }
-    //}
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.gameObject.layer == LayerMask.NameToLayer("Explosion"))
+            {
+                Debug.Log("Wachoin");
+                OnEnemyKilled?.Invoke();
+            }
+        }
 
-    private void OnDisable()
-    {
-        OnEnemyKilled?.Invoke();
-    }
 }
 }
