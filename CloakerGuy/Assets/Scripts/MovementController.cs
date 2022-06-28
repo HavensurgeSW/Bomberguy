@@ -12,6 +12,7 @@ public class MovementController : MonoBehaviour
     public static Action OnPlayerDeath;
 
     [Header("Audio Files")]
+    private AudioSource sfxOutput;
     public AudioClip walkSound;
 
 
@@ -32,6 +33,7 @@ public class MovementController : MonoBehaviour
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
+        sfxOutput = GetComponent<AudioSource>();
         activeSpriteRenderer = spriteRendererDown;
     }
 
@@ -39,15 +41,22 @@ public class MovementController : MonoBehaviour
     {
         if (Input.GetKey(inputUp) || Input.GetKey(KeyCode.UpArrow)) {
             SetDirection(Vector2.up, spriteRendererUp);
+                PlayWalking();
         } else if (Input.GetKey(inputDown)||Input.GetKey(KeyCode.DownArrow)) {
             SetDirection(Vector2.down, spriteRendererDown);
+            PlayWalking();
         } else if (Input.GetKey(inputLeft) || Input.GetKey(KeyCode.LeftArrow)) {
             SetDirection(Vector2.left, spriteRendererLeft);
+            PlayWalking();
         } else if (Input.GetKey(inputRight) || Input.GetKey(KeyCode.RightArrow)) {
             SetDirection(Vector2.right, spriteRendererRight);
+            PlayWalking();
         } else {
             SetDirection(Vector2.zero, activeSpriteRenderer);
         }
+
+        //if(Input.GetKeyDown(KeyCode.K))
+           
     }
 
     private void FixedUpdate()
@@ -74,12 +83,11 @@ public class MovementController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Explosion")) {
-    
-            DeathSequence();
+                DeathSequence(activeSpriteRenderer);
         }
     }
 
-    private void DeathSequence()
+    private void DeathSequence(AnimatedSpriteRenderer spriteRenderer)
     {
         enabled = false;
         GetComponent<BombController>().enabled = false;
@@ -89,6 +97,8 @@ public class MovementController : MonoBehaviour
         spriteRendererLeft.enabled = false;
         spriteRendererRight.enabled = false;
         spriteRendererDeath.enabled = true;
+        spriteRendererDeath.enabled = spriteRenderer == spriteRendererDeath;
+        activeSpriteRenderer = spriteRenderer;
 
         Invoke(nameof(OnDeathSequenceEnded), 3.25f);
     }
@@ -99,6 +109,15 @@ public class MovementController : MonoBehaviour
         gameObject.SetActive(false);
         
     }
+
+        private void PlayWalking()
+        {
+            if (!sfxOutput.isPlaying)
+            {
+                sfxOutput.clip = walkSound;
+                sfxOutput.Play();
+            }
+        }
 
 }
 }
