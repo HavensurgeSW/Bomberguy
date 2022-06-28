@@ -14,6 +14,7 @@ public class EnemyBehaviour : MonoBehaviour
     private void Start()
     {
         OnEnemySpawned?.Invoke();
+        
     }
 
     //void OnCollisionEnter(Collision other){

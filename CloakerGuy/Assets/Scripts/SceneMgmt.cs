@@ -12,6 +12,7 @@ namespace HSS
         }
         public static void ChangeToLoseScreen() {
             SceneManager.LoadScene(4);
+            
         }
         public void ChangeToGame()
         {

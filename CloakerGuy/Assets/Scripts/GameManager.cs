@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
 namespace HSS{
 
@@ -10,6 +11,8 @@ public class GameManager : MonoBehaviour
     public static GameManager current;
     [SerializeField]private int totalEnemies = 0;
     private bool winCon = false;
+
+    public bool WINCON { get { return winCon; }}
 
     private void Awake(){
             if (current != null && current != this)
@@ -42,7 +45,7 @@ public class GameManager : MonoBehaviour
         EnemyBehaviour.OnEnemyKilled -= WinGame;
         EnemyBehaviour.OnEnemySpawned -= AddEnemyCount;
 
-            MovementController.OnPlayerDeath -= LoseGame;
+        MovementController.OnPlayerDeath -= LoseGame;
     }
 
     private void AddEnemyCount(){
@@ -62,20 +65,19 @@ public class GameManager : MonoBehaviour
     private void WinGame() {
         if (winCon == true)
         {
-            StartCoroutine(nameof(WinWait));
-            SceneMgmt.ChangeToWinScreen();
+                MovementController.OnPlayerDeath -= LoseGame;
+                StartCoroutine(WinWait(SceneMgmt.ChangeToWinScreen));
         }
     }
 
-    private void LoseGame() {
-
-        StartCoroutine(nameof(WinWait));
-        SceneMgmt.ChangeToLoseScreen();
-
+    private void LoseGame() { 
+        StartCoroutine(WinWait(SceneMgmt.ChangeToLoseScreen));
     }
 
-     IEnumerator WinWait() {
-        yield return new WaitForSeconds(5);
+     IEnumerator WinWait(Action callback) {
+        yield return new WaitForSeconds(2);
+        callback?.Invoke();
      }
+
 }
 }

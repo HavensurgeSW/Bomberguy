@@ -11,6 +11,10 @@ public class MovementController : MonoBehaviour
 
     public static Action OnPlayerDeath;
 
+    [Header("Audio Files")]
+    public AudioClip walkSound;
+
+
     [Header("Input")]
     public KeyCode inputUp = KeyCode.W;
     public KeyCode inputDown = KeyCode.S;
@@ -33,13 +37,13 @@ public class MovementController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(inputUp)) {
+        if (Input.GetKey(inputUp) || Input.GetKey(KeyCode.UpArrow)) {
             SetDirection(Vector2.up, spriteRendererUp);
-        } else if (Input.GetKey(inputDown)) {
+        } else if (Input.GetKey(inputDown)||Input.GetKey(KeyCode.DownArrow)) {
             SetDirection(Vector2.down, spriteRendererDown);
-        } else if (Input.GetKey(inputLeft)) {
+        } else if (Input.GetKey(inputLeft) || Input.GetKey(KeyCode.LeftArrow)) {
             SetDirection(Vector2.left, spriteRendererLeft);
-        } else if (Input.GetKey(inputRight)) {
+        } else if (Input.GetKey(inputRight) || Input.GetKey(KeyCode.RightArrow)) {
             SetDirection(Vector2.right, spriteRendererRight);
         } else {
             SetDirection(Vector2.zero, activeSpriteRenderer);
