@@ -12,12 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/HSSBomb.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/CreditScene.unity
-    guid: 8378676441a8b3d45887bcf508f6cd76
-  - enabled: 1
-    path: Assets/Scenes/TutorialScene.unity
-    guid: 61c51e955961b2a4191572ebf2a33e04
-  - enabled: 1
     path: Assets/Scenes/GameOverScene.unity
     guid: f5ee5594776bd2341b80e9b279cbc870
   - enabled: 1
