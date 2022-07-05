@@ -10,13 +10,16 @@ public class PauseBehaviour : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            pauseToggle();
-            pauseTime();
+            GeneralPauseCall();
         }
 
     }
 
-    public void pauseTime() {
+    public void GeneralPauseCall() {
+        PauseToggle();
+        PauseTime();
+    }
+     void PauseTime() {
         if (!pauseState)
         {
             Time.timeScale = 0f;
@@ -28,7 +31,7 @@ public class PauseBehaviour : MonoBehaviour
         }
     }
 
-    public void pauseToggle()
+     void PauseToggle()
     {
         if (!pauseState)
         {

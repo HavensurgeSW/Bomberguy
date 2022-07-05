@@ -151,7 +151,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destructionTime: 1
-  spawnableItems: []
 --- !u!82 &6338900253341577180
 AudioSource:
   m_ObjectHideFlags: 0
@@ -164,7 +163,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b58dadb56afa29f469bfe2e30da88ecf, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.703
+  m_Volume: 0.797
   m_Pitch: 1
   Loop: 0
   Mute: 0
