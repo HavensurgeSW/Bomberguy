@@ -14,13 +14,15 @@ namespace HSS
         // Start is called before the first frame update
         void Start()
         {
-            filepath = Application.dataPath + "/StreamingAssets";
-
-            FileStream fs = File.OpenWrite(filepath + "/EnemyAmount.txt");
-            StreamWriter sw = new StreamWriter(fs);
-            sw.Write(6);
-            sw.Close();
-            fs.Close();
+            filepath = Application.dataPath + "/StreamingAssets/EnemyAmount.txt";
+            if (!System.IO.File.Exists(filepath))
+            {
+                FileStream fs = File.OpenWrite(filepath);
+                StreamWriter sw = new StreamWriter(fs);
+                sw.Write(6);
+                sw.Close();
+                fs.Close();  
+            }
         }
     }
 }
