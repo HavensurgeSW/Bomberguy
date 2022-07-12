@@ -1,4 +1,5 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -16,7 +17,9 @@ namespace HSS
         }
         public void ChangeToGame()
         {
+            FadeScreen();
             SceneManager.LoadScene(1);
+
         }
 
         public void ChangeToMenu()
@@ -26,6 +29,12 @@ namespace HSS
         public void QuitGame()
         {
             Application.Quit();
+        }
+
+
+        IEnumerator FadeScreen()
+        {
+            yield return new WaitForSeconds(2);
         }
     }
 }
