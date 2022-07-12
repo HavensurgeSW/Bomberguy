@@ -10,20 +10,21 @@ namespace HSS
     {
 
         public static Action OnPlayPressed;
-        public static void ChangeToWinScreen() {
-            SceneManager.LoadScene(3);
-        }
+        
         public static void ChangeToLoseScreen() {
             SceneManager.LoadScene(2);
             
         }
         public void ChangeToGame()
         {
+
+            Debug.Log("Clicked Play");
             StartCoroutine(FadeScreen());
         }
 
         public void ChangeToMenu()
         {
+            Time.timeScale = 1f;
             SceneManager.LoadScene(0);
         }
         public void QuitGame()
@@ -35,7 +36,7 @@ namespace HSS
         IEnumerator FadeScreen()
         {
             OnPlayPressed?.Invoke();
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSecondsRealtime(2);
             SceneManager.LoadScene(1);
         }
     }

@@ -45,6 +45,7 @@ public class PauseBehaviour : MonoBehaviour
 
     private void OnDisable()
     {
+        Debug.Log("Resetting timecale");
         Time.timeScale = 1f;
     }
 

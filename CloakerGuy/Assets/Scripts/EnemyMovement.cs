@@ -8,6 +8,7 @@ public class EnemyMovement : MonoBehaviour
     private new Rigidbody2D rigidbody;
     private Vector2 direction = Vector2.down;
     public EnemyConfig enemyconfig;
+   
     private int moveDirec;
 
     [Header("Sprites")]

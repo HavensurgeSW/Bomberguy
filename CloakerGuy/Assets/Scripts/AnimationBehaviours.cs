@@ -20,8 +20,7 @@ namespace HSS {
         }
 
         void EnableAnimator() {
-            animator.enabled = true;
-            animator.Play("FadeOutAnim");
+            animator.SetTrigger("ExecuteFade");
         }
     }
 }
