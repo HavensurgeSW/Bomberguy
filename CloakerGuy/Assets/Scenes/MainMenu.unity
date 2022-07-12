@@ -1425,6 +1425,7 @@ GameObject:
   - component: {fileID: 1585218877}
   - component: {fileID: 1585218876}
   - component: {fileID: 1585218878}
+  - component: {fileID: 1585218879}
   m_Layer: 5
   m_Name: FadingImage
   m_TagString: Untagged
@@ -1466,7 +1467,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.6650944, g: 1, b: 0.9796574, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1495,7 +1496,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1585218873}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 7b7b22493d962e646b71be941b5bb643, type: 2}
   m_CullingMode: 0
@@ -1507,6 +1508,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1585218879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585218873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19da4e3926ed4a04cb54b54a83ccc245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1585218878}
 --- !u!224 &1676852130 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8673915366881383357, guid: be4e1a27b2f70a942901cbb53e251e86, type: 3}
