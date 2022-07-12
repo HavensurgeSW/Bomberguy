@@ -43,5 +43,10 @@ public class PauseBehaviour : MonoBehaviour
         }
     }
 
+    private void OnDisable()
+    {
+        Time.timeScale = 1f;
+    }
+
 
 }
