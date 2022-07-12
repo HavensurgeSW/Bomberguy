@@ -8,6 +8,8 @@ namespace HSS
 {
     public class SceneMgmt : MonoBehaviour
     {
+
+        public static Action OnPlayPressed;
         public static void ChangeToWinScreen() {
             SceneManager.LoadScene(3);
         }
@@ -17,9 +19,7 @@ namespace HSS
         }
         public void ChangeToGame()
         {
-            FadeScreen();
-            SceneManager.LoadScene(1);
-
+            StartCoroutine(FadeScreen());
         }
 
         public void ChangeToMenu()
@@ -34,7 +34,9 @@ namespace HSS
 
         IEnumerator FadeScreen()
         {
+            OnPlayPressed?.Invoke();
             yield return new WaitForSeconds(2);
+            SceneManager.LoadScene(1);
         }
     }
 }
