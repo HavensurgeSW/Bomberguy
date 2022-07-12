@@ -8,20 +8,23 @@ namespace HSS
 {
     public class EndScreenBehaviour : MonoBehaviour
     {
-        [SerializeField] Texture2D winScreen;
-        [SerializeField] Texture2D loseScreen;
+        [SerializeField] GameObject winScreen;
+        [SerializeField] GameObject loseScreen;
 
-        private Texture2D shownImage;
-        public GameObject imageDisplay;
         void Awake()
         {
+            winScreen.SetActive(false);
+            loseScreen.SetActive(false);
+
             if (GameManager.current.WINCON)
             {
-                shownImage = winScreen;
+                winScreen.SetActive(true);
             }
             else {
-                shownImage = loseScreen;
+                loseScreen.SetActive(true);
             }
+
+            
         }
 
     }

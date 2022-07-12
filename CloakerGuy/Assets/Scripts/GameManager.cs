@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
         if (winCon == true)
         {
                 MovementController.OnPlayerDeath -= LoseGame;
-                StartCoroutine(WinWait(SceneMgmt.ChangeToWinScreen));
+                StartCoroutine(WinWait(SceneMgmt.ChangeToLoseScreen)) ;
         }
     }
 
