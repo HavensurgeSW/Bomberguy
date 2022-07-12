@@ -9,10 +9,19 @@ namespace HSS
     public class SpawnEnemies : MonoBehaviour
     {
         int numOfEnemiesToSpawn;
-        public EnemySpawnPoints spawnPoints;
+        public EnemySpawnPoints SP;
+        public GameObject prefab;
+        public GameObject[] enemyList;
+        public Transform parent;
         private void Start()
         {
            numOfEnemiesToSpawn =  ReadFile();
+
+            for (int i = 0; i < numOfEnemiesToSpawn; i++)
+            {
+                enemyList[i] = Instantiate(prefab, parent);
+                enemyList[i].gameObject.transform.position = SP.spawnPoints[i];
+            }
         }
 
         int ReadFile()

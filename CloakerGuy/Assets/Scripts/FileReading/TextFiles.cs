@@ -22,16 +22,5 @@ namespace HSS
             sw.Close();
             fs.Close();
         }
-
-
-
-        void ReadFile()
-        {
-            FileStream fs = File.OpenRead(filepath + "/EnemyAmount.txt");
-            StreamReader sr = new StreamReader(fs);
-            string texto = sr.ReadLine();
-            sr.Close();
-            fs.Close();
-        }
     }
 }
