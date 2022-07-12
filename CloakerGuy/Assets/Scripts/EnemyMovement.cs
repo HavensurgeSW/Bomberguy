@@ -7,7 +7,7 @@ public class EnemyMovement : MonoBehaviour
 {
     private new Rigidbody2D rigidbody;
     private Vector2 direction = Vector2.down;
-    public float speed = 2f;
+    public EnemyConfig enemyconfig;
     private int moveDirec;
 
     [Header("Sprites")]
@@ -56,7 +56,7 @@ public class EnemyMovement : MonoBehaviour
     private void FixedUpdate()
     {
         Vector2 position = rigidbody.position;
-        Vector2 translation = direction * speed * Time.fixedDeltaTime;
+        Vector2 translation = direction * enemyconfig.enemySpeed * Time.fixedDeltaTime;
 
         rigidbody.MovePosition(position + translation);
     }
